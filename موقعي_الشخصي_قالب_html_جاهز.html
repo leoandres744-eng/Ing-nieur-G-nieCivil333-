@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>موقعي الشخصي | اسمك هنا</title>
+  <meta name="description" content="نبذة عني وخدماتي ومعلومات الاتصال" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --card:#111827ee; /* gray-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --brand:#22c55e; /* green-500 */
+      --brand-2:#06b6d4; /* cyan-500 */
+      --ring:#22c55e33;
+      --radius:1.25rem;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Kufi Arabic", sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, #0ea5e980, transparent 60%),
+                  radial-gradient(1000px 700px at -10% 30%, #22c55e3d, transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1100px, 92%); margin-inline:auto}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px); background:#0b1228cc; border-bottom:1px solid #1f2937}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .9rem 0}
+    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.3px}
+    .brand .logo{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow)}
+    .brand span{font-size:1.15rem}
+    .nav a{opacity:.9}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:.6rem; padding:.7rem 1rem; border-radius:999px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#001b1d; font-weight:800; box-shadow: var(--shadow); border:0; cursor:pointer}
+    .btn:focus{outline:3px solid var(--ring)}
+
+    .hero{padding:6rem 0 4rem}
+    .grid{display:grid; gap:1.5rem}
+    @media (min-width: 900px){ .grid-2{grid-template-columns: 1.1fr .9fr} }
+
+    .card{background:linear-gradient(180deg, #111827ee, #0b1021ee); border:1px solid #1f2937; border-radius:var(--radius); box-shadow: var(--shadow)}
+    .p-4{padding:1.25rem}
+    .p-5{padding:1.5rem}
+    .p-6{padding:2rem}
+    .mt-1{margin-top:.25rem}
+    .mt-2{margin-top:.5rem}
+    .mt-3{margin-top:.75rem}
+    .mt-4{margin-top:1rem}
+    .mt-6{margin-top:1.25rem}
+    .mt-8{margin-top:1.75rem}
+    .muted{color:var(--muted)}
+    .tag{display:inline-block; padding:.25rem .6rem; border-radius:.6rem; background:#0b2833; color:#a7f3d0; border:1px solid #0d3f3b}
+
+    .kpis{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top:1rem}
+    .kpi{background:#0c142d; border:1px solid #1e293b; border-radius:1rem; padding:1rem; text-align:center}
+    .kpi strong{display:block; font-size:1.6rem}
+
+    section{padding:2rem 0}
+    h1{font-size:clamp(1.8rem, 3.8vw, 3rem); margin:0 0 .5rem; line-height:1.2}
+    h2{font-size:clamp(1.3rem, 2.4vw, 1.8rem); margin:0 0 .8rem}
+
+    .list{display:grid; gap:1rem}
+    @media(min-width:800px){ .list-2{grid-template-columns: repeat(2, 1fr)} }
+    @media(min-width:1000px){ .list-3{grid-template-columns: repeat(3, 1fr)} }
+
+    .service{padding:1.25rem; border:1px solid #1f2937; border-radius:1rem; background:#0d132a}
+
+    .projects .item{display:flex; flex-direction:column; gap:.8rem; padding:1rem; border:1px solid #1f2937; border-radius:1rem; background:#0d132a}
+
+    form{display:grid; gap:.8rem}
+    input, textarea{background:#0b1329; border:1px solid #1f2937; border-radius:.8rem; padding:.8rem 1rem; color:var(--text)}
+    input:focus, textarea:focus{outline:3px solid var(--ring)}
+
+    footer{padding:2.5rem 0; border-top:1px solid #1f2937; color:#a8b1c2}
+    .footer-grid{display:grid; gap:1rem}
+    @media(min-width:900px){ .footer-grid{grid-template-columns: 1fr auto} }
+    .social a{display:inline-flex; align-items:center; gap:.4rem; padding:.5rem .8rem; border:1px solid #1f2937; border-radius:999px; margin-inline:.25rem; background:#0b1228}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="logo">⚡</span>
+        <span>اسمك هنا</span>
+      </a>
+      <nav>
+        <a href="#about">عنّي</a>
+        <span style="opacity:.4; padding:0 .6rem">•</span>
+        <a href="#services">الخدمات</a>
+        <span style="opacity:.4; padding:0 .6rem">•</span>
+        <a href="#projects">الأعمال</a>
+        <span style="opacity:.4; padding:0 .6rem">•</span>
+        <a href="#contact">اتصال</a>
+      </nav>
+      <a class="btn" href="#contact">تواصل الآن</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container grid grid-2">
+        <div class="card p-6">
+          <span class="tag">متاح للعمل</span>
+          <h1>أنا <span style="background:linear-gradient(135deg, var(--brand), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">مهندس مدني</span> – أصنع حلولاً عملية وجميلة</h1>
+          <p class="muted mt-2">أساعد الشركات والأفراد على تخطيط وتنفيذ مشاريع البنية التحتية والبناء بكفاءة عالية وجودة مضمونة.</p>
+          <div class="kpis">
+            <div class="kpi"><strong>5+</strong><span class="muted">سنوات خبرة</span></div>
+            <div class="kpi"><strong>30+</strong><span class="muted">مشروعاً</span></div>
+            <div class="kpi"><strong>10+</strong><span class="muted">عملاء سعداء</span></div>
+          </div>
+          <div class="mt-6">
+            <a class="btn" href="#contact">ابدأ مشروعك</a>
+            <a style="margin-inline:.6rem; opacity:.85" href="#projects">استعراض الأعمال →</a>
+          </div>
+        </div>
+        <div class="card p-6" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1523419409543-a5e549c1cfb5?q=80&w=1600&auto=format&fit=crop" alt="" style="border-radius:var(--radius); aspect-ratio: 16/11; object-fit:cover; border:1px solid #1f2937"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>نبذة مختصرة</h2>
+        <div class="card p-5">
+          <p>مرحباً! أنا <strong>اسمك</strong>، متخصص في <em>الهندسة المدنية</em> وإدارة المشاريع. أُتقن إعداد التصاميم، الحسابات الإنشائية، والجداول الزمنية، مع التركيز على الجودة والسلامة والتكلفة.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>الخدمات</h2>
+        <div class="list list-3">
+          <div class="service">
+            <h3>تصميم إنشائي</h3>
+            <p class="muted">حساب وتسليح الأساسات، الجسور، والأسقف وفق المعايير.</p>
+          </div>
+          <div class="service">
+            <h3>إدارة مشاريع</h3>
+            <p class="muted">تخطيط الموارد، تقدير الكميات، وجدولة التنفيذ ومراقبة الجودة.</p>
+          </div>
+          <div class="service">
+            <h3>إشراف ومتابعة</h3>
+            <p class="muted">زيارات ميدانية وتقديم تقارير دورية لضمان الالتزام بالمخططات.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>نماذج أعمال</h2>
+        <div class="list list-2">
+          <article class="item">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop" alt="مشروع 1" style="border-radius:.8rem; aspect-ratio:16/10; object-fit:cover" />
+            <div>
+              <strong>مشروع بنية تحتية حضرية</strong>
+              <p class="muted mt-1">شبكات صرف ومياه أمطار مع أرصفة ذكية ومسارات دراجات.</p>
+            </div>
+          </article>
+          <article class="item">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop" alt="مشروع 2" style="border-radius:.8rem; aspect-ratio:16/10; object-fit:cover" />
+            <div>
+              <strong>مبنى إداري حديث</strong>
+              <p class="muted mt-1">تصميم إنشائي مرن مع مساحات مفتوحة وكفاءة طاقية.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>تواصل معي</h2>
+        <div class="grid grid-2">
+          <div class="card p-5">
+            <form name="contact" onsubmit="sendMessage(event)">
+              <label>
+                <span>الاسم</span>
+                <input type="text" name="name" required placeholder="اكتب اسمك" />
+              </label>
+              <label>
+                <span>البريد الإلكتروني</span>
+                <input type="email" name="email" required placeholder="you@example.com" />
+              </label>
+              <label>
+                <span>رسالتك</span>
+                <textarea name="message" rows="4" required placeholder="كيف أقدر أساعدك؟"></textarea>
+              </label>
+              <button class="btn" type="submit">إرسال</button>
+            </form>
+          </div>
+          <div class="card p-5">
+            <p class="muted">تفضل بالتواصل المباشر:</p>
+            <p>الهاتف: <a href="tel:+212600000000">+212 6 00 00 00 00</a></p>
+            <p>واتساب: <a href="https://wa.me/212600000000" target="_blank" rel="noopener">مراسلة الآن</a></p>
+            <p>البريد: <a href="mailto:you@example.com">you@example.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <small>© <span id="year"></span> اسمك هنا. جميع الحقوق محفوظة.</small>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">🔗 لينكدإن</a>
+        <a href="#" aria-label="YouTube">▶️ يوتيوب</a>
+        <a href="#" aria-label="GitHub">💻 جيتهاب</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function sendMessage(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      const body = encodeURIComponent(`الاسم: ${data.name}\nالبريد: ${data.email}\n\n${data.message}`);
+      const subject = encodeURIComponent('رسالة من موقعك');
+      window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
